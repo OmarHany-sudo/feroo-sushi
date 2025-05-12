@@ -223,7 +223,7 @@ a {
 .menu {
     padding: 50px 20px;
     text-align: center;
-    background: url('assets/images/hero_sushi_purple.jpg') no-repeat center/cover; /* Sushi image as background */
+    background: url('assets/images/hero_sushi_purple.jpg') no-repeat center/cover;
     position: relative;
     border-radius: 15px;
     margin: 20px;
@@ -236,7 +236,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 15px;
     z-index: 1;
 }
@@ -285,25 +285,21 @@ a {
 }
 
 .menu-item {
-    background: rgba(255, 255, 255, 0.15); /* Slightly lighter for contrast */
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 15px;
-    padding: 25px;
+    padding: 30px; /* Increased padding for better text spacing */
     box-shadow: var(--glow-shadow);
     transition: transform 0.3s ease;
-    backdrop-filter: blur(5px); /* Glass effect */
+    backdrop-filter: blur(5px);
+    min-height: 150px; /* Fixed minimum height for consistency */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .menu-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 15px var(--purple-glow), 0 0 25px var(--purple-glow);
-}
-
-.menu-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
 }
 
 .menu-item h3 {
