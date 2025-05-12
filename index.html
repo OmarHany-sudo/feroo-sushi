@@ -500,5 +500,62 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <script>
+    const galleryImgs = document.querySelectorAll('.gallery-img');
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImg = document.querySelector('.lightbox-img');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxPrev = document.querySelector('.lightbox-prev');
+    const lightboxNext = document.querySelector('.lightbox-next');
+    let currentIndex = 0;
+
+    // Open Lightbox when clicking an image
+    galleryImgs.forEach((img, index) => {
+        img.addEventListener('click', () => {
+            currentIndex = index;
+            lightboxImg.src = img.src;
+            lightbox.style.display = 'flex';
+        });
+    });
+
+    // Close Lightbox
+    lightboxClose.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+
+    // Previous Image
+    lightboxPrev.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + galleryImgs.length) % galleryImgs.length;
+        lightboxImg.src = galleryImgs[currentIndex].src;
+    });
+
+    // Next Image
+    lightboxNext.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % galleryImgs.length;
+        lightboxImg.src = galleryImgs[currentIndex].src;
+    });
+
+    // Close Lightbox when clicking outside the image
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
+
+    // Keyboard navigation (left and right arrows)
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.style.display === 'flex') {
+            if (e.key === 'ArrowLeft') {
+                lightboxPrev.click();
+            } else if (e.key === 'ArrowRight') {
+                lightboxNext.click();
+            } else if (e.key === 'Escape') {
+                lightboxClose.click();
+            }
+        }
+    });
+</script>
+    
 </body>
 </html>
