@@ -62,109 +62,314 @@
     </section>
 
     <section id="menu" class="menu">
-        <h2>Our Menu</h2>
-        <div class="menu-filters">
-            <button data-filter="all" class="filter-btn active">All</button>
-            <button data-filter="fried" class="filter-btn">Fried</button>
-            <button data-filter="raw" class="filter-btn">Raw</button>
+    <h2>Our Menu</h2>
+    <div class="menu-filters">
+        <button data-filter="all" class="filter-btn active">All</button>
+        <button data-filter="nigiri" class="filter-btn">Nigiri</button>
+        <button data-filter="sashimi" class="filter-btn">Sashimi</button>
+        <button data-filter="rolls" class="filter-btn">Rolls</button>
+        <button data-filter="sides" class="filter-btn">Sides & Drinks</button>
+    </div>
+    <div class="menu-items">
+        <!-- Nigiri -->
+        <div class="menu-item" data-category="nigiri">
+            <h3>Salmon Nigiri</h3>
+            <p>Fresh salmon on sushi rice</p>
+            <p>20 EGP/piece</p>
         </div>
-        <div class="menu-items">
-            <!-- Fried Category -->
-            <div class="menu-item" data-category="fried">
-                <img src="assets/images/hot_lemon_roll.jpg" alt="Hot Lemon Roll">
-                <h3>Hot Lemon Roll <img src="assets/icons/spicy.svg" class="icon" alt="Spicy"></h3>
-                <p>Shrimp tempura, lemon zest, spicy mayo, avocado</p>
-                <p>$14.99</p>
-            </div>
-            <div class="menu-item" data-category="fried">
-                <img src="assets/images/gold_vulcan.jpg" alt="Gold Vulcan">
-                <h3>Gold Vulcan</h3>
-                <p>Crab stick, cream cheese, eel sauce, tempura flakes</p>
-                <p>$13.99</p>
-            </div>
-            <div class="menu-item" data-category="fried">
-                <img src="assets/images/vulcan_new_style.jpg" alt="Vulcan New Style">
-                <h3>Vulcan New Style</h3>
-                <p>Salmon tempura, avocado, teriyaki sauce</p>
-                <p>$15.99</p>
-            </div>
-            <div class="menu-item" data-category="fried">
-                <img src="assets/images/dynamite_half_fried.jpg" alt="Dynamite Half Fried">
-                <h3>Dynamite Half Fried <img src="assets/icons/spicy.svg" class="icon" alt="Spicy"></h3>
-                <p>Spicy tuna, tempura shrimp, dynamite sauce</p>
-                <p>$16.99</p>
-            </div>
-    
-            <!-- Raw Category -->
-            <div class="menu-item" data-category="raw">
-                <img src="assets/images/philadelphia.jpg" alt="Philadelphia">
-                <h3>Philadelphia</h3>
-                <p>Salmon, cream cheese, cucumber</p>
-                <p>$12.99</p>
-            </div>
-            <div class="menu-item" data-category="raw">
-                <img src="assets/images/carvonia_caviar.jpg" alt="Carvonia Caviar">
-                <h3>Carvonia Caviar</h3>
-                <p>Fresh tuna, caviar, sesame seeds</p>
-                <p>$18.99</p>
-            </div>
-            <div class="menu-item" data-category="raw">
-                <img src="assets/images/wet_sesame_caviar.jpg" alt="Wet Sesame Caviar">
-                <h3>Wet Sesame Caviar</h3>
-                <p>Salmon, sesame caviar, soy sauce</p>
-                <p>$17.99</p>
-            </div>
-            <div class="menu-item" data-category="raw">
-                <img src="assets/images/pink_lady.jpg" alt="Pink Lady">
-                <h3>Pink Lady</h3>
-                <p>Tuna, avocado, pink soy paper</p>
-                <p>$14.99</p>
-            </div>
-            <div class="menu-item" data-category="raw">
-                <img src="assets/images/crispy_tempura.jpg" alt="Crispy Tempura">
-                <h3>Crispy Tempura</h3>
-                <p>Shrimp tempura, fresh salmon, spicy mayo</p>
-                <p>$15.99</p>
-            </div>
-            <div class="menu-item" data-category="raw">
-                <img src="assets/images/crispy_geisha.jpg" alt="Crispy Geisha">
-                <h3>Crispy Geisha</h3>
-                <p>Crab stick, salmon, tempura flakes</p>
-                <p>$13.99</p>
-            </div>
-            <div class="menu-item" data-category="raw">
-                <img src="assets/images/crispy_geisha_green.jpg" alt="Crispy Geisha Green">
-                <h3>Crispy Geisha Green <img src="assets/icons/vegetarian.svg" class="icon" alt="Vegetarian"></h3>
-                <p>Avocado, cucumber, seaweed, sesame</p>
-                <p>$11.99</p>
-            </div>
-            <div class="menu-item" data-category="raw">
-                <img src="assets/images/chitose_ura_maki.jpg" alt="Chitose Ura Maki">
-                <h3>Chitose Ura Maki</h3>
-                <p>Salmon, avocado, inside-out roll</p>
-                <p>$14.99</p>
-            </div>
-            <div class="menu-item" data-category="raw">
-                <img src="assets/images/suede_sake.jpg" alt="Suede Sake">
-                <h3>Suede Sake</h3>
-                <p>Fresh salmon, suede wrap, soy glaze</p>
-                <p>$16.99</p>
-            </div>
-            <div class="menu-item" data-category="raw">
-                <img src="assets/images/black_white_sassumi_maki.jpg" alt="Black and White Sassumi Maki">
-                <h3>Black and White Sassumi Maki</h3>
-                <p>Tuna, salmon, black and white sesame</p>
-                <p>$15.99</p>
-            </div>
-            <div class="menu-item" data-category="raw">
-                <img src="assets/images/macky_godzilla.jpg" alt="Macky Godzilla">
-                <h3>Macky Godzilla <img src="assets/icons/spicy.svg" class="icon" alt="Spicy"></h3>
-                <p>Spicy tuna, eel, avocado, godzilla sauce</p>
-                <p>$17.99</p>
-            </div>
+        <div class="menu-item" data-category="nigiri">
+            <h3>Tuna Nigiri</h3>
+            <p>Fresh tuna on sushi rice</p>
+            <p>20 EGP/piece</p>
         </div>
-    </section>
+        <div class="menu-item" data-category="nigiri">
+            <h3>Crab Nigiri</h3>
+            <p>Crab meat on sushi rice</p>
+            <p>20 EGP/piece</p>
+        </div>
+        <div class="menu-item" data-category="nigiri">
+            <h3>Shrimp Tempura Nigiri</h3>
+            <p>Tempura shrimp on sushi rice</p>
+            <p>20 EGP/piece</p>
+        </div>
+        <div class="menu-item" data-category="nigiri">
+            <h3>Sad Salmon Nigiri</h3>
+            <p>Marinated salmon on sushi rice</p>
+            <p>20 EGP/piece</p>
+        </div>
+        <div class="menu-item" data-category="nigiri">
+            <h3>Boiled Shrimp Nigiri</h3>
+            <p>Boiled shrimp on sushi rice</p>
+            <p>20 EGP/piece</p>
+        </div>
 
+        <!-- Sashimi -->
+        <div class="menu-item" data-category="sashimi">
+            <h3>Salmon Sashimi</h3>
+            <p>Fresh salmon slices</p>
+            <p>120 EGP (5 pcs) / 240 EGP (10 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="sashimi">
+            <h3>Tuna Sashimi</h3>
+            <p>Fresh tuna slices</p>
+            <p>120 EGP (5 pcs) / 240 EGP (10 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="sashimi">
+            <h3>Crab Sashimi</h3>
+            <p>Crab meat slices</p>
+            <p>120 EGP (5 pcs) / 240 EGP (10 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="sashimi">
+            <h3>Shrimp Tempura Sashimi</h3>
+            <p>Tempura shrimp slices</p>
+            <p>120 EGP (5 pcs) / 240 EGP (10 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="sashimi">
+            <h3>Boiled Shrimp Sashimi</h3>
+            <p>Boiled shrimp slices</p>
+            <p>120 EGP (5 pcs) / 240 EGP (10 pcs)</p>
+        </div>
+
+        <!-- Rolls -->
+        <div class="menu-item" data-category="rolls">
+            <h3>Salmon Hosomaki</h3>
+            <p>Salmon roll with rice and seaweed</p>
+            <p>70 EGP (6 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Tuna Hosomaki</h3>
+            <p>Tuna roll with rice and seaweed</p>
+            <p>70 EGP (6 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Crab Tempura Hosomaki</h3>
+            <p>Crab tempura roll</p>
+            <p>70 EGP (6 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Shrimp Tempura Hosomaki</h3>
+            <p>Shrimp tempura roll</p>
+            <p>70 EGP (6 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Boiled Shrimp Hosomaki</h3>
+            <p>Boiled shrimp roll</p>
+            <p>70 EGP (6 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Cucumber Hosomaki <img src="assets/icons/vegetarian.svg" class="icon" alt="Vegetarian"></h3>
+            <p>Cucumber roll</p>
+            <p>70 EGP (6 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Avocado Hosomaki <img src="assets/icons/vegetarian.svg" class="icon" alt="Vegetarian"></h3>
+            <p>Avocado roll</p>
+            <p>70 EGP (6 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Shrimp Tempura Oshi</h3>
+            <p>Pressed shrimp tempura sushi</p>
+            <p>50 EGP (3 pcs) / 80 EGP (6 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Spicy Tuna Oshi <img src="assets/icons/spicy.svg" class="icon" alt="Spicy"></h3>
+            <p>Pressed spicy tuna sushi</p>
+            <p>50 EGP (3 pcs) / 80 EGP (6 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Tuna Oshi</h3>
+            <p>Pressed tuna sushi</p>
+            <p>50 EGP (3 pcs) / 80 EGP (6 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Salmon Oshi</h3>
+            <p>Pressed salmon sushi</p>
+            <p>50 EGP (3 pcs) / 80 EGP (6 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Avocado Oshi <img src="assets/icons/vegetarian.svg" class="icon" alt="Vegetarian"></h3>
+            <p>Pressed avocado sushi</p>
+            <p>50 EGP (3 pcs) / 80 EGP (6 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Spicy Lemon Fried Roll <img src="assets/icons/spicy.svg" class="icon" alt="Spicy"></h3>
+            <p>Spicy lemon, shrimp, tempura</p>
+            <p>90 EGP</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Volcano Fried Roll</h3>
+            <p>Crab, cream cheese, eel sauce</p>
+            <p>60 EGP</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Spider Fried Roll</h3>
+            <p>Soft-shell crab, avocado</p>
+            <p>80 EGP</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Fried Shrimp Roll</h3>
+            <p>Tempura shrimp, cucumber</p>
+            <p>60 EGP</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Halloween Fried Roll</h3>
+            <p>Salmon, cream cheese, spicy mayo</p>
+            <p>80 EGP</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Fried Salmon Roll</h3>
+            <p>Fried salmon, avocado</p>
+            <p>60 EGP</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>California Special Roll</h3>
+            <p>Crab, avocado, cucumber</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Dragon Special Roll</h3>
+            <p>Eel, avocado, tempura</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Green Special Roll <img src="assets/icons/vegetarian.svg" class="icon" alt="Vegetarian"></h3>
+            <p>Avocado, cucumber, green soy</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Spicy Shrimp Special Roll <img src="assets/icons/spicy.svg" class="icon" alt="Spicy"></h3>
+            <p>Spicy shrimp, tempura</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Sweet Special Roll</h3>
+            <p>Sweet shrimp, mango</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Pink Special Roll</h3>
+            <p>Tuna, pink soy paper</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Crispy Special Roll</h3>
+            <p>Crab, tempura flakes</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Shrimp Salmon Special Roll</h3>
+            <p>Shrimp, salmon, avocado</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Naruto Special Roll</h3>
+            <p>Tuna, cucumber, no rice</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Godzilla Special Roll <img src="assets/icons/spicy.svg" class="icon" alt="Spicy"></h3>
+            <p>Spicy tuna, tempura</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Skyfall Special Roll</h3>
+            <p>Salmon, avocado, tobiko</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Crispy Bermuda Special Roll</h3>
+            <p>Crab, mango, tempura</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Mango Shrimp Special Roll</h3>
+            <p>Shrimp, mango, soy</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Mango Salmon Special Roll</h3>
+            <p>Salmon, mango, soy</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Dynamite Shrimp Special Roll <img src="assets/icons/spicy.svg" class="icon" alt="Spicy"></h3>
+            <p>Spicy shrimp, dynamite sauce</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Philadelphia Special Roll</h3>
+            <p>Salmon, cream cheese</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>New Style Thunder Special Roll</h3>
+            <p>Tuna, spicy mayo, tempura</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Crispy Shrimp Special Roll</h3>
+            <p>Crisp shrimp, avocado</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Pink Panther Special Roll</h3>
+            <p>Tuna, pink soy, avocado</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Italian Roll Special Roll</h3>
+            <p>Salmon, cream cheese, soy</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Spicy Salmon Special Roll <img src="assets/icons/spicy.svg" class="icon" alt="Spicy"></h3>
+            <p>Spicy salmon, tempura</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Summer Special Roll</h3>
+            <p>Salmon, mango, cucumber</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+        <div class="menu-item" data-category="rolls">
+            <h3>Red Fire Dragon Special Roll <img src="assets/icons/spicy.svg" class="icon" alt="Spicy"></h3>
+            <p>Spicy tuna, eel, avocado</p>
+            <p>70 EGP (4 pcs) / 130 EGP (8 pcs)</p>
+        </div>
+
+        <!-- Sides & Drinks -->
+        <div class="menu-item" data-category="sides">
+            <h3>Teriyaki Sauce</h3>
+            <p>Classic Japanese sauce</p>
+            <p>15 EGP</p>
+        </div>
+        <div class="menu-item" data-category="sides">
+            <h3>Spicy Mayo Sauce <img src="assets/icons/spicy.svg" class="icon" alt="Spicy"></h3>
+            <p>Spicy mayonnaise</p>
+            <p>15 EGP</p>
+        </div>
+        <div class="menu-item" data-category="sides">
+            <h3>Siracha Sauce <img src="assets/icons/spicy.svg" class="icon" alt="Spicy"></h3>
+            <p>Hot chili sauce</p>
+            <p>15 EGP</p>
+        </div>
+        <div class="menu-item" data-category="sides">
+            <h3>Mayo Sesame Sauce</h3>
+            <p>Sesame-flavored mayo</p>
+            <p>15 EGP</p>
+        </div>
+        <div class="menu-item" data-category="sides">
+            <h3>Wasabi Sauce</h3>
+            <p>Japanese horseradish</p>
+            <p>15 EGP</p>
+        </div>
+        <div class="menu-item" data-category="sides">
+            <h3>Ginger Sauce</h3>
+            <p>Pickled ginger</p>
+            <p>15 EGP</p>
+        </div>
+    </div>
+</section>
     <section id="offers" class="offers">
     <h2>Special Offers</h2>
     <div class="offer-cards">
