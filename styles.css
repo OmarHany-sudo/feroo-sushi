@@ -327,12 +327,11 @@ a {
     width: 20px;
     vertical-align: middle;
 }
-
 /* Offers Section */
 .offers {
     padding: 50px 20px;
     text-align: center;
-    background: url('assets/images/hero_sushi_purple.jpg') no-repeat center/cover; /* Sushi image as background */
+    background: url('assets/images/hero_sushi_purple.jpg') no-repeat center/cover;
     position: relative;
     border-radius: 15px;
     margin: 20px;
@@ -345,7 +344,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 15px;
     z-index: 1;
 }
@@ -367,12 +366,12 @@ a {
 }
 
 .offer-card {
-    background: rgba(255, 255, 255, 0.15); /* Slightly lighter for contrast */
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 15px;
     padding: 20px;
     box-shadow: var(--glow-shadow);
     transition: transform 0.3s ease;
-    backdrop-filter: blur(5px); /* Glass effect */
+    backdrop-filter: blur(5px);
 }
 
 .offer-card:hover {
@@ -396,6 +395,19 @@ a {
 .offer-card p {
     color: var(--white);
     margin: 5px 0;
+}
+
+.offer-card del {
+    color: #ffcccc; /* Light red for crossed-out price */
+    text-decoration: line-through;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.offer-card .new-price {
+    color: var(--gold); /* Highlight new price in gold */
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 /* Gallery Section */
