@@ -510,36 +510,47 @@
     const lightboxNext = document.querySelector('.lightbox-next');
     let currentIndex = 0;
 
+    // Check if elements exist
+    if (!galleryImgs.length || !lightbox || !lightboxImg || !lightboxClose || !lightboxPrev || !lightboxNext) {
+        console.error('One or more gallery elements are missing!');
+        return;
+    }
+
     // Open Lightbox when clicking an image
     galleryImgs.forEach((img, index) => {
         img.addEventListener('click', () => {
             currentIndex = index;
             lightboxImg.src = img.src;
             lightbox.style.display = 'flex';
+            console.log('Opened lightbox at index:', currentIndex);
         });
     });
 
     // Close Lightbox
     lightboxClose.addEventListener('click', () => {
         lightbox.style.display = 'none';
+        console.log('Closed lightbox');
     });
 
     // Previous Image
     lightboxPrev.addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + galleryImgs.length) % galleryImgs.length;
         lightboxImg.src = galleryImgs[currentIndex].src;
+        console.log('Moved to previous image, index:', currentIndex);
     });
 
     // Next Image
     lightboxNext.addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % galleryImgs.length;
         lightboxImg.src = galleryImgs[currentIndex].src;
+        console.log('Moved to next image, index:', currentIndex);
     });
 
     // Close Lightbox when clicking outside the image
     lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox) {
             lightbox.style.display = 'none';
+            console.log('Closed lightbox by clicking outside');
         }
     });
 
@@ -548,10 +559,13 @@
         if (lightbox.style.display === 'flex') {
             if (e.key === 'ArrowLeft') {
                 lightboxPrev.click();
+                console.log('Navigated left');
             } else if (e.key === 'ArrowRight') {
                 lightboxNext.click();
+                console.log('Navigated right');
             } else if (e.key === 'Escape') {
                 lightboxClose.click();
+                console.log('Closed with Escape');
             }
         }
     });
