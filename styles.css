@@ -1,0 +1,587 @@
+/* General Styles */
+:root {
+    --black: #1a1a1a;
+    --white: #f5f5f5; /* White softened for better readability */
+    --deep-red: #d32f2f; /* Softer red */
+    --gold: #d4a017;
+    --wasabi-green: #8bc34a;
+    --purple-glow: #b19cd9; /* Purple inspired by the sushi image */
+    --glow-shadow: 0 0 8px #b19cd9, 0 0 15px #b19cd9; /* Softer glow effect */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--white);
+    line-height: 1.6;
+    background: linear-gradient(135deg, #2a1a3d 0%, #1a1a1a 100%); /* Gradient purple to black background */
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--deep-red);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Softer shadow for readability */
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: var(--glow-shadow);
+    transition: all 0.3s ease;
+}
+
+.btn.primary {
+    background: var(--deep-red);
+    color: var(--white);
+}
+
+.btn.secondary {
+    background: var(--wasabi-green);
+    color: var(--white);
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--deep-red);
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--purple-glow);
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: var(--white);
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--white);
+}
+
+/* Hero Section */
+.hero {
+    background: url('assets/images/hero_sushi_purple.jpg') no-repeat center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Softer shadow */
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay for contrast */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.cta-buttons {
+    margin-top: 20px;
+}
+
+.cta-buttons .btn {
+    margin: 10px;
+}
+
+/* Popular Dishes Carousel */
+.popular-dishes {
+    padding: 50px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.popular-dishes h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.carousel {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    flex: 0 0 33.33%;
+    padding: 10px;
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--glow-shadow);
+}
+
+.carousel-item h3 {
+    color: var(--white);
+    margin: 10px 0;
+}
+
+.carousel-item p {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--deep-red);
+    color: var(--white);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background: var(--purple-glow);
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+/* Menu Section */
+.menu {
+    padding: 50px 20px;
+    text-align: center;
+    background: url('assets/images/hero_sushi_purple.jpg') no-repeat center/cover; /* Sushi image as background */
+    position: relative;
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.menu h2, .menu-filters, .menu-items {
+    position: relative;
+    z-index: 2;
+}
+
+.menu h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.menu-filters {
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    background: var(--purple-glow);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: var(--glow-shadow);
+}
+
+.filter-btn:hover {
+    background: var(--deep-red);
+    transform: scale(1.05);
+}
+
+.filter-btn.active {
+    background: var(--deep-red);
+    box-shadow: 0 0 10px var(--deep-red);
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.menu-item {
+    background: rgba(255, 255, 255, 0.15); /* Slightly lighter for contrast */
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: var(--glow-shadow);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(5px); /* Glass effect */
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px var(--purple-glow), 0 0 25px var(--purple-glow);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.menu-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--white);
+    text-shadow: none;
+}
+
+.menu-item p {
+    color: var(--white);
+    margin: 5px 0;
+}
+
+.menu-item p:last-child {
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.icon {
+    width: 20px;
+    vertical-align: middle;
+}
+
+/* Offers Section */
+.offers {
+    padding: 50px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.offers h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.offer-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.offer-card {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: var(--glow-shadow);
+    transition: transform 0.3s ease;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px var(--purple-glow);
+}
+
+.offer-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.offer-card h3 {
+    color: var(--white);
+    margin: 10px 0;
+}
+
+.offer-card p {
+    color: var(--white);
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 50px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.gallery h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.gallery-img {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: var(--glow-shadow);
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: var(--glow-shadow);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: var(--white);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: var(--deep-red);
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid var(--white);
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+.contact-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.contact-form .btn {
+    margin-top: 10px;
+}
+
+/* Footer */
+.footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 50px 20px;
+    text-align: center;
+    border-top: 2px solid var(--purple-glow);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.footer-logo {
+    height: 50px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--white);
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-social a {
+    color: var(--white);
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--deep-red);
+}
+
+.footer-hours h4 {
+    margin-bottom: 10px;
+}
+
+.footer-address p {
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .carousel-item {
+        flex: 0 0 100%;
+    }
+
+    .menu-items {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 60vh;
+    }
+
+    .btn {
+        padding: 8px 16px;
+    }
+
+    .contact-content {
+        flex-direction: column;
+    }
+}
