@@ -493,7 +493,6 @@ a {
 .lightbox-close:hover {
     color: var(--deep-red);
 }
-
 .lightbox-prev, .lightbox-next {
     position: absolute;
     top: 50%;
@@ -506,10 +505,7 @@ a {
     border-radius: 50%;
     font-size: 24px;
     transition: background 0.3s ease;
-}
-
-.lightbox-prev:hover, .lightbox-next:hover {
-    background: var(--purple-glow);
+    z-index: 201; /* Increased z-index */
 }
 
 .lightbox-prev {
