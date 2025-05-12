@@ -410,9 +410,27 @@ a {
 .gallery {
     padding: 50px 20px;
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: url('assets/images/hero_sushi_purple.jpg') no-repeat center/cover; /* Sushi background */
+    position: relative;
     border-radius: 15px;
     margin: 20px;
+}
+
+.gallery::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay for readability */
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.gallery h2, .gallery-grid {
+    position: relative;
+    z-index: 2;
 }
 
 .gallery h2 {
@@ -423,11 +441,14 @@ a {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
+    gap: 15px;
+    padding: 0 10px;
 }
 
 .gallery-img {
     width: 100%;
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -436,6 +457,7 @@ a {
 
 .gallery-img:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 15px var(--purple-glow), 0 0 25px var(--purple-glow);
 }
 
 .lightbox {
@@ -445,7 +467,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     align-items: center;
     justify-content: center;
     z-index: 200;
@@ -453,7 +475,7 @@ a {
 
 .lightbox-img {
     max-width: 90%;
-    max-height: 90%;
+    max-height: 80%;
     border-radius: 10px;
     box-shadow: var(--glow-shadow);
 }
@@ -462,7 +484,7 @@ a {
     position: absolute;
     top: 20px;
     right: 20px;
-    font-size: 30px;
+    font-size: 40px;
     color: var(--white);
     cursor: pointer;
     transition: color 0.3s ease;
@@ -470,6 +492,81 @@ a {
 
 .lightbox-close:hover {
     color: var(--deep-red);
+}
+
+.lightbox-prev, .lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--deep-red);
+    color: var(--white);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 24px;
+    transition: background 0.3s ease;
+}
+
+.lightbox-prev:hover, .lightbox-next:hover {
+    background: var(--purple-glow);
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+/* Responsive Design for Gallery */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+    }
+
+    .gallery-img {
+        height: 150px;
+    }
+
+    .lightbox-img {
+        max-width: 85%;
+        max-height: 70%;
+    }
+
+    .lightbox-prev, .lightbox-next {
+        padding: 10px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 8px;
+    }
+
+    .gallery-img {
+        height: 120px;
+    }
+
+    .lightbox-img {
+        max-width: 90%;
+        max-height: 60%;
+    }
+
+    .lightbox-prev, .lightbox-next {
+        padding: 8px;
+        font-size: 18px;
+    }
+
+    .lightbox-close {
+        font-size: 30px;
+        top: 10px;
+        right: 10px;
+    }
 }
 
 /* Contact Section */
