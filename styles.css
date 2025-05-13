@@ -364,10 +364,15 @@ a {
 .offer-card {
     background: rgba(255, 255, 255, 0.15);
     border-radius: 15px;
-    padding: 20px;
+    padding: 25px; /* زيادة الـ padding عشان النصوص تتنفس */
     box-shadow: var(--glow-shadow);
     transition: transform 0.3s ease;
     backdrop-filter: blur(5px);
+    min-height: 220px; /* ارتفاع ثابت عشان الكروت تكون متساوية */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* توزيع المحتوى بشكل متساوي */
+    align-items: center;
 }
 
 .offer-card:hover {
@@ -375,22 +380,16 @@ a {
     box-shadow: 0 0 15px var(--purple-glow);
 }
 
-.offer-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
 .offer-card h3 {
     color: var(--white);
     margin: 10px 0;
+    font-size: 1.5rem;
 }
 
 .offer-card p {
     color: var(--white);
     margin: 5px 0;
+    font-size: 1rem;
 }
 
 .offer-card del {
@@ -404,6 +403,45 @@ a {
     color: var(--gold); /* Highlight new price in gold */
     font-size: 1.2rem;
     font-weight: 700;
+}
+
+/* Responsive Design for Offers */
+@media (max-width: 768px) {
+    .offer-cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .offer-card {
+        min-height: 200px;
+        padding: 20px;
+    }
+
+    .offer-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .offer-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .offer-cards {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .offer-card {
+        min-height: 180px;
+        padding: 15px;
+    }
+
+    .offer-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .offer-card p {
+        font-size: 0.85rem;
+    }
 }
 
 /* Gallery Section */
