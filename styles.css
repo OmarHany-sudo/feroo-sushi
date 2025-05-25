@@ -147,12 +147,31 @@ a {
 }
 
 /* Popular Dishes Carousel */
+/* Popular Dishes Section */
 .popular-dishes {
     padding: 50px 20px;
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: url('assets/images/hero_sushi_purple.jpg') no-repeat center/cover;
+    position: relative;
     border-radius: 15px;
     margin: 20px;
+}
+
+.popular-dishes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.popular-dishes h2, .popular-grid {
+    position: relative;
+    z-index: 2;
 }
 
 .popular-dishes h2 {
@@ -160,63 +179,77 @@ a {
     margin-bottom: 20px;
 }
 
-.carousel {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    overflow: hidden;
+.popular-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
 }
 
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.carousel-item {
-    flex: 0 0 33.33%;
-    padding: 10px;
-    text-align: center;
-}
-
-.carousel-item img {
-    width: 100%;
-    border-radius: 10px;
+.popular-item {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 20px;
     box-shadow: var(--glow-shadow);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(5px);
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.carousel-item h3 {
+.popular-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px var(--purple-glow), 0 0 25px var(--purple-glow);
+}
+
+.popular-item h3 {
+    font-size: 1.5rem;
     color: var(--white);
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
-.carousel-item p {
-    color: var(--gold);
-    font-weight: 700;
-}
-
-.carousel-prev, .carousel-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: var(--deep-red);
+.popular-item p {
     color: var(--white);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: background 0.3s ease;
+    margin: 5px 0;
+    font-size: 1rem;
 }
 
-.carousel-prev:hover, .carousel-next:hover {
-    background: var(--purple-glow);
+/* Responsive Design for Popular Dishes */
+@media (max-width: 768px) {
+    .popular-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .popular-item {
+        min-height: 160px;
+        padding: 15px;
+    }
+
+    .popular-item h3 {
+        font-size: 1.3rem;
+    }
 }
 
-.carousel-prev {
-    left: 10px;
-}
+@media (max-width: 480px) {
+    .popular-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
 
-.carousel-next {
-    right: 10px;
+    .popular-item {
+        min-height: 140px;
+        padding: 10px;
+    }
+
+    .popular-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .popular-item p {
+        font-size: 0.9rem;
+    }
 }
 
 /* Menu Section */
