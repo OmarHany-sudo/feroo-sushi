@@ -280,82 +280,114 @@ a {
 }
 
 .menu h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 20px;
 }
 
 .menu-filters {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .filter-btn {
-    background: var(--purple-glow);
-    color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
     border: none;
-    padding: 12px 24px;
+    padding: 10px 20px;
     margin: 5px;
-    cursor: pointer;
+    color: var(--white);
     border-radius: 25px;
-    font-weight: 700;
-    transition: all 0.3s ease;
-    box-shadow: var(--glow-shadow);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-size: 1rem;
 }
 
 .filter-btn:hover {
-    background: var(--deep-red);
+    background: var(--purple-glow);
     transform: scale(1.05);
 }
 
 .filter-btn.active {
     background: var(--deep-red);
-    box-shadow: 0 0 10px var(--deep-red);
+    transform: scale(1.05);
 }
 
 .menu-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
 }
 
 .menu-item {
     background: rgba(255, 255, 255, 0.15);
     border-radius: 15px;
-    padding: 30px; /* Increased padding for better text spacing */
+    padding: 20px;
     box-shadow: var(--glow-shadow);
     transition: transform 0.3s ease;
     backdrop-filter: blur(5px);
-    min-height: 150px; /* Fixed minimum height for consistency */
+    min-height: 180px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .menu-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 15px var(--purple-glow), 0 0 25px var(--purple-glow);
+    box-shadow: 0 0 15px var(--purple-glow);
 }
 
 .menu-item h3 {
     font-size: 1.5rem;
-    margin-bottom: 10px;
     color: var(--white);
-    text-shadow: none;
+    margin-bottom: 10px;
 }
 
 .menu-item p {
     color: var(--white);
     margin: 5px 0;
+    font-size: 1rem;
 }
 
-.menu-item p:last-child {
-    font-weight: 700;
-    color: var(--gold);
+/* Responsive Design for Menu */
+@media (max-width: 768px) {
+    .menu-items {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .menu-item {
+        min-height: 160px;
+        padding: 15px;
+    }
+
+    .menu-item h3 {
+        font-size: 1.3rem;
+    }
 }
 
-.icon {
-    width: 20px;
-    vertical-align: middle;
+@media (max-width: 480px) {
+    .menu-items {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .menu-item {
+        min-height: 140px;
+        padding: 10px;
+    }
+
+    .menu-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .menu-item p {
+        font-size: 0.9rem;
+    }
+
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
 }
+
 /* Offers Section */
 .offers {
     padding: 50px 20px;
