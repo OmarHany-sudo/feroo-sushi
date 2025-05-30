@@ -583,6 +583,35 @@
         }
     });
 </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove 'active' class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add 'active' class to the clicked button
+                button.classList.add('active');
+
+                // Get the filter value
+                const filter = button.getAttribute('data-filter');
+
+                // Filter the menu items
+                menuItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    if (filter === 'all' || category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
     
 </body>
 </html>
