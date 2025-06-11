@@ -149,154 +149,129 @@ a {
 
 
 /* Menu Section */
-/* Menu Section */
 .menu {
-    padding: 40px 20px;
+    padding: 50px 20px;
     text-align: center;
-    background: #f5f7fa; /* لون خلفية فاتح وأنيق */
-    border-radius: 12px;
-    margin: 20px auto;
-    max-width: 1200px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* ظل خفيف للتميز */
+    background: url('assets/images/hero_sushi_purple.jpg') no-repeat center/cover;
+    position: relative;
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.menu h2, .menu-filters, .menu-items {
+    position: relative;
+    z-index: 2;
 }
 
 .menu h2 {
-    font-size: 2.2rem;
-    color: #1a252f; /* لون عنوان داكن */
-    margin-bottom: 25px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .menu-filters {
     margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    background: #ffffff;
-    padding: 10px;
-    border-radius: 25px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .filter-btn {
-    background: #3498db; /* لون أزرق جذاب */
-    color: white;
+    background: rgba(255, 255, 255, 0.1);
     border: none;
     padding: 10px 20px;
-    border-radius: 20px;
+    margin: 5px;
+    color: var(--white);
+    border-radius: 25px;
     cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
     font-size: 1rem;
-    transition: all 0.3s ease;
-    font-weight: 500;
 }
 
-.filter-btn:hover, .filter-btn.active {
-    background: #2980b9; /* لون أزرق داكن عند التحديد */
-    transform: translateY(-2px); /* تأثير رفع خفيف */
+.filter-btn:hover {
+    background: var(--purple-glow);
+    transform: scale(1.05);
+}
+
+.filter-btn.active {
+    background: var(--deep-red);
+    transform: scale(1.05);
 }
 
 .menu-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     padding: 0 10px;
 }
 
 .menu-item {
-    background: #ffffff;
-    border: 1px solid #ecf0f1;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: left;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: var(--glow-shadow);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(5px);
+    min-height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    align-items: center;
 }
 
 .menu-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px var(--purple-glow);
 }
 
 .menu-item h3 {
-    font-size: 1.3rem;
-    color: #2c3e50; /* لون عنوان داكن */
-    margin: 0 0 8px;
-    font-weight: 600;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 10px;
 }
 
 .menu-item p {
-    font-size: 0.95rem;
-    color: #7f8c8d; /* لون وصف محايد */
+    color: var(--white);
     margin: 5px 0;
-    line-height: 1.4;
+    font-size: 1rem;
 }
 
-.price {
-    font-weight: 700;
-    color: #e74c3c; /* لون سعر مميز */
-    margin-top: 10px;
-    font-size: 1.1rem;
-}
-
-.icons {
-    font-size: 1.3rem;
-    margin: 10px 0;
-    color: #27ae60; /* لون أيقونات أخضر */
-}
-
-.btn {
-    display: inline-block;
-    background: #2ecc71; /* لون زر أخضر */
-    color: white;
-    padding: 8px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    text-align: center;
-    transition: all 0.3s ease;
-    margin-top: auto; /* لتحديد الموضع السفلي في الـ Card */
-}
-
-.btn:hover {
-    background: #27ae60; /* لون داكن عند التحويم */
-    transform: translateY(-1px);
-}
-
-.order-btn {
-    width: 100%;
-}
-
-/* Responsive Design */
+/* Responsive Design for Menu */
 @media (max-width: 768px) {
-    .menu {
-        padding: 30px 15px;
-    }
-
-    .menu h2 {
-        font-size: 1.8rem;
-    }
-
     .menu-items {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
 
     .menu-item {
-        padding: 12px;
+        min-height: 160px;
+        padding: 15px;
     }
 
     .menu-item h3 {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-items {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .menu-item {
+        min-height: 140px;
+        padding: 10px;
+    }
+
+    .menu-item h3 {
+        font-size: 1.2rem;
     }
 
     .menu-item p {
@@ -309,28 +284,7 @@ a {
     }
 }
 
-@media (max-width: 480px) {
-    .menu-items {
-        grid-template-columns: 1fr;
-    }
 
-    .menu-item h3 {
-        font-size: 1rem;
-    }
-
-    .menu-item p {
-        font-size: 0.85rem;
-    }
-
-    .filter-btn {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-    }
-
-    .btn {
-        font-size: 0.9rem;
-    }
-}
 /* Offers Section */
 .offers {
     padding: 50px 20px;
