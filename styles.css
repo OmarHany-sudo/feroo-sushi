@@ -244,6 +244,22 @@ a {
     font-size: 1rem;
 }
 
+.btn {
+    display: inline-block;
+    background: #e67e22; /* لون جديد للزر (برتقالي غامق) */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background: #d35400; /* لون داكن عند التحويم */
+    transform: scale(1.05); /* زيادة الحجم عند التحويم */
+}
+
 /* Responsive Design for Menu */
 @media (max-width: 768px) {
     .menu-items {
