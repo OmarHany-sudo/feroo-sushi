@@ -63,44 +63,50 @@ filterButtons.forEach(button => {
 });
 
 // Gallery Lightbox
-const galleryImages = document.querySelectorAll('.gallery-img');
-const lightbox = document.querySelector('.lightbox');
-const lightboxImg = document.querySelector('.lightbox-img');
-const lightboxClose = document.querySelector('.lightbox-close');
-const prevBtn = document.querySelector('.lightbox-prev');
-const nextBtn = document.querySelector('.lightbox-next');
+document.addEventListener('DOMContentLoaded', () => {
+    // Gallery Lightbox
+    const galleryImages = document.querySelectorAll('.gallery-img');
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImg = document.querySelector('.lightbox-img');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxPrev = document.querySelector('.lightbox-prev');
+    const lightboxNext = document.querySelector('.lightbox-next');
 
-let currentIndex = 0;
+    let currentImageIndex = 0;
+    let images = Array.from(galleryImages);
 
-galleryImages.forEach((img, index) => {
-  img.addEventListener('click', () => {
-    currentIndex = index;
-    lightboxImg.src = img.src;
-    lightbox.style.display = 'flex';
-    setTimeout(() => lightbox.classList.add('show'), 10);
-  });
-});
+    // Open lightbox with clicked image
+    galleryImages.forEach((img, index) => {
+        img.addEventListener('click', () => {
+            currentImageIndex = index;
+            lightboxImg.src = img.src;
+            lightbox.style.display = 'flex';
+        });
+    });
 
-lightboxClose.addEventListener('click', () => {
-  lightbox.classList.remove('show');
-  setTimeout(() => (lightbox.style.display = 'none'), 300);
-});
+    // Close lightbox
+    lightboxClose.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
 
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) {
-    lightbox.classList.remove('show');
-    setTimeout(() => (lightbox.style.display = 'none'), 300);
-  }
-});
+    // Close if clicked outside image
+    lightbox.addEventListener('click', e => {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
 
-prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-  lightboxImg.src = galleryImages[currentIndex].src;
-});
+    // Show previous image
+    lightboxPrev.addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        lightboxImg.src = images[currentImageIndex].src;
+    });
 
-nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % galleryImages.length;
-  lightboxImg.src = galleryImages[currentIndex].src;
+    // Show next image
+    lightboxNext.addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        lightboxImg.src = images[currentImageIndex].src;
+    });
 });
 
 // Contact Form Validation
